@@ -1,16 +1,15 @@
 import React from "react";
 import Link from "gatsby-link";
 
-import Container from "../components/container/Container";
+import Intro from "../components/home-page/intro/Intro";
 
 const IndexPage = ({ children, data:{allDataJson} }) => {
   // console.log(">>>>", allDataJson)
   return (
   <main>
-    <Container>
-      <h1>{allDataJson.edges[0].node.homePage.title}</h1>
-      <Link to="/about/">About</Link>
-    </Container>
+    <h1>{allDataJson.edges[0].node.homePage.title}</h1>
+    <Link to="/about/">About</Link>
+    <Intro data={allDataJson.edges[0].node.homePage.introText} />
   </main>
   )
 };
@@ -24,6 +23,10 @@ export const query = graphql`
         node {
           homePage {
             title
+            introText {
+              first
+              second
+            }
           } 
         }
       }

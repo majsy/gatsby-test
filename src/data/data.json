@@ -1,6 +1,10 @@
 {
   "homePage": {
-    "title": "Home"
+    "title": "Home",
+    "introText": {
+      "first": "hejsan",
+      "second": "allihopa"
+    }
   },
   "footer": {
     "title": "footer"
