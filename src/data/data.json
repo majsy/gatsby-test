@@ -1,8 +1,8 @@
 {
-  "footer": {
-    "title": "footer"
-  },
   "homePage": {
     "title": "Home"
+  },
+  "footer": {
+    "title": "footer"
   }
 }

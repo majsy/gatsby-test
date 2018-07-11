@@ -3,19 +3,28 @@ import Link from "gatsby-link";
 
 import Container from "../components/container/Container";
 
-const HomePage = ({ children, data }) => (
+const IndexPage = ({ children, data:{allDataJson} }) => {
+  // console.log(">>>>", allDataJson)
+  return (
   <main>
-    <h1>Home</h1>
+    <h1>{allDataJson.edges[0].node.homePage.title}</h1>
     <Link to="/about/">About</Link>
   </main>
-);
+  )
+};
 
-export default HomePage;
+export default IndexPage;
 
 export const query = graphql`
-query HomeQuery {
-  homePage {
-    title
+  query IndexQuery {
+    allDataJson {
+      edges {
+        node {
+          homePage {
+            title
+          } 
+        }
+      }
+    }  
   }
-}
 `
