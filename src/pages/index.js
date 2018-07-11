@@ -7,8 +7,10 @@ const IndexPage = ({ children, data:{allDataJson} }) => {
   // console.log(">>>>", allDataJson)
   return (
   <main>
-    <h1>{allDataJson.edges[0].node.homePage.title}</h1>
-    <Link to="/about/">About</Link>
+    <Container>
+      <h1>{allDataJson.edges[0].node.homePage.title}</h1>
+      <Link to="/about/">About</Link>
+    </Container>
   </main>
   )
 };
