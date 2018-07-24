@@ -1,4 +1,5 @@
-// const rootDir = `${__dirname}/public`;
+const postcssImport = require('postcss-import');
+const postcssVars = require('postcss-simple-vars');
 
 module.exports = {
   siteMetadata: {
@@ -14,6 +15,18 @@ module.exports = {
         name: `data`,
         path: `${__dirname}/src/data/`,
       },
+    },
+    {
+      resolve: `gatsby-plugin-postcss-sass`,
+      options: {
+        postCssPlugins: [
+          postcssImport({
+            path: 'src/'
+          }),
+          postcssVars()
+        ],
+        precision: 8
+      }
     },
   ],
 }
